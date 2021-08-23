@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 100%;height: 100%;">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+  <script src="./bottom-sheet.js"></script>
+</head>
+<body style="width: 100%;height: 100%;box-sizing: border-box;margin: 0">
+<bottom-sheet id="bottom-sheet" name="World" slots="[&quot;a&quot;, &quot;b&quot;]" onclick="show()">
+  <p>Test</p>
+  <div slot="a" style="width: 100%;height: 400px">Test a</div>
+<!--  <div slot="b" style="width: 100%;height: 300px">Test b</div>-->
+</bottom-sheet>
+<script>
+  const bs = document.getElementById('bottom-sheet');
+  bs.setConfig({
+    items: {
+      a: {
+        visibleHeightList: ['20%', '30%', '40%', '50%', '100%'],
+        visibleHeight: '100%'
+      }
+    }
+  });
+
+  function show() {
+    bs.item = 'a';
+  }
+</script>
+</body>
+</html>
